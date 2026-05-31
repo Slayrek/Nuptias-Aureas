@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+
+:root {
+    --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    --silver-gradient: linear-gradient(135deg, #888888 0%, #e0e0e0 25%, #999999 50%, #f0f0f0 75%, #777777 100%);
+    --transition-gradient: linear-gradient(to bottom, #03030a 0%, #08080c 50%, #0d0d0f 100%);
+    --bg-dark-gold: #03030a;
+    --bg-dark-silver: #0d0d0f;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark-gold);
+    color: #ffffff;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Luxury Particle Canvas background fixed layout */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1; /* Layered exactly above backgrounds but below interactions */
+    pointer-events: none; /* Allows mouse clicks to bypass canvas to elements below */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #0a122c 0%, #020205 100%);
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+}
+
+.hero-line {
+    height: 1px;
+    width: 120px;
+    background: var(--gold-gradient);
+    margin: 0 auto 30px auto;
+    opacity: 0.6;
+}
+
+.hero p {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: #e5dfcf;
+    font-weight: 300;
+}
+
+/* Track Block Layout */
+.track-block {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.blur-bg {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(65px) brightness(0.22);
+    z-index: 0; /* Lowered so particles float smoothly over background glow */
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+.container {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8%;
+    position: relative;
+    z-index: 2;
+}
+
+.track-text {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+}
+
+.track-visual {
+    width: 42%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Alternating alignments */
+.text-left .container { flex-direction: row; }
+.text-right .container { flex-direction: row-reverse; }
+
+.track-meta {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 15px;
+}
+
+.track-block h2 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.accent-line {
+    height: 1px;
+    width: 60px;
+    margin-bottom: 30px;
+    opacity: 0.5;
+}
+
+.lyrics {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    line-height: 1.8;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+/* Cover 1:1 Premium Styling */
+.cover-wrapper {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    padding: 1.5px;
+    position: relative;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.9);
+}
+
+.cover-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Custom Audio Player */
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.01);
+    padding: 15px 25px;
+    border-radius: 2px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.play-btn {
+    background: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.play-btn:hover { transform: scale(1.1); }
+
+.play-btn::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 10px;
+}
+
+.play-btn.playing::before {
+    border-style: double;
+    border-width: 0px 0px 0px 10px;
+    width: 10px;
+    height: 12px;
+    background: transparent;
+    border-color: currentColor;
+}
+
+.progress-container {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    cursor: pointer;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: -3px;
+    top: -2.5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.time-display {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    font-weight: 300;
+    min-width: 35px;
+    text-align: right;
+    opacity: 0.6;
+}
+
+/* Luxury Transition Intermission Block */
+.transition-divider {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--transition-gradient);
+    text-align: center;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.transition-line-top, .transition-line-bottom {
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.transition-line-top { top: 0; background: linear-gradient(to bottom, #bf953f, transparent); }
+.transition-line-bottom { bottom: 0; background: linear-gradient(to top, #888888, transparent); }
+
+.transition-content { max-width: 600px; }
+
+.transition-title {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #bf953f, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.transition-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #a0a0a5;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Gold Theme Specifics */
+.gold-theme { background-color: var(--bg-dark-gold); }
+.gold-theme h2 { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.gold-theme .accent-line { background: var(--gold-gradient); }
+.gold-theme .cover-wrapper { background: var(--gold-gradient); }
+.gold-theme .lyrics { color: #f7f3e8; }
+.gold-theme .play-btn::before { border-color: transparent transparent transparent #f5e6b3; }
+.gold-theme .progress-bar { background: #d9c88a; }
+.gold-theme .progress-bar::after { background: #fcf6ba; box-shadow: 0 0 6px #bf953f; }
+
+/* Silver Theme Specifics */
+.silver-theme { background-color: var(--bg-dark-silver); }
+.silver-theme h2 { background: var(--silver-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.silver-theme .accent-line { background: var(--silver-gradient); }
+.silver-theme .cover-wrapper { background: var(--silver-gradient); }
+.silver-theme .lyrics { color: #e6e6e6; }
+.silver-theme .play-btn::before { border-color: transparent transparent transparent #e0e0e0; }
+.silver-theme .progress-bar { background: #b0b0b0; }
+.silver-theme .progress-bar::after { background: #ffffff; box-shadow: 0 0 6px #999999; }
+
+.album-footer {
+    padding: 80px 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.3;
+    background-color: var(--bg-dark-silver);
+}
+
+@media (max-width: 992px) {
+    .container { flex-direction: column !important; gap: 40px; padding: 0 24px; }
+    .track-text, .track-visual { width: 100%; }
+    .track-text { align-items: center; text-align: center; }
+    .hero h1 { font-size: 2.8rem; }
+    .track-block h2 { font-size: 2.4rem; }
+    .transition-title { font-size: 1.8rem; }
+}
+
+/* ==========================================
+   LOGO OVERLAY ON COVERS
+   ========================================== */
+.cover-wrapper {
+    /* Цей клас вже є у вашому CSS, ми просто переконуємося, 
+       що він має position: relative (він його вже має) */
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover-logo.overlay {
+    position: absolute;
+    /* Відцентровуємо логотип абсолютно по центру обкладинки */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Налаштуйте розмір логотипу під ваші потреби */
+    width: 85%; /* Логотип займатиме 60% від ширини обкладинки */
+    height: auto;
+    object-fit: contain;
+    
+    z-index: 10; /* Гарантує, що логотип буде поверх обкладинки */
+    pointer-events: none; /* Щоб логотип не заважав клікати, якщо щось є під ним */
+    
+    /* Легка тінь (drop-shadow), щоб логотип краще читався, 
+       навіть якщо фон під ним зливається з кольором лого */
+    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.4));
+}

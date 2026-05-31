@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuptias Aureas</title>
+    <link rel="icon" type="image/png" href="logo/l11.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Nuptias Aureas</h1>
+            <div class="hero-line"></div>
+            <p>A collection of dissolved moments, where gold turns to stardust and silver freezes in memory. A reverse alchemy of the soul, born in the space between the last breath of the night and the first ray of dawn.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================= GOLD / BLUE THEME (1-8) ================= -->
+        
+        <!-- Track 1: Abyssal White -->
+        <section class="track-block gold-theme text-left">
+            <div class="blur-bg" style="background-image: url('img/1.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">01</span>
+                    <h2>Abyssal White</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">A blinding light that consumes the shadows. We are suspended in absolute purity, losing ourselves to the deafening silence of white.</p>
+                    <div class="audio-player">
+                        <audio src="music/Abyssal White.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/1.png" alt="Abyssal White" class="cover-art">
+                        <img src="logo/l1.png" alt="Logo 1" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track 2: Bedroom -->
+        <section class="track-block gold-theme text-right">
+            <div class="blur-bg" style="background-image: url('img/2.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">02</span>
+                    <h2>Reamains</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">The walls hold the resonance of our midnight confessions. Every fold in the sheets remembers the shape of a ghost that no longer sleeps here.</p>
+                    <div class="audio-player">
+                        <audio src="music/Reamains.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/2.png" alt="Bedroom" class="cover-art">
+                        <img src="logo/l2.png" alt="Logo 2" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track 3: Devotion -->
+        <section class="track-block gold-theme text-left">
+            <div class="blur-bg" style="background-image: url('img/3.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">03</span>
+                    <h2>Devotion</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">A heavy gravity pulling us into the dark. I built a temple from silence, but you brought the storm. Now, only the ruins of our dedication remain.</p>
+                    <div class="audio-player">
+                        <audio src="music/Devotion.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/3.png" alt="Devotion" class="cover-art">
+                        <img src="logo/l3.png" alt="Logo 3" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track 4: Dissolved -->
+        <section class="track-block gold-theme text-right">
+            <div class="blur-bg" style="background-image: url('img/4.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">04</span>
+                    <h2>Dissolved</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">The room spins, and my edges begin to blur. A fractured melody pitching downward into the void. We are just echoes now, losing our shape in the smoke.</p>
+                    <div class="audio-player">
+                        <audio src="music/Dissolved.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/4.png" alt="Dissolved" class="cover-art">
+                        <img src="logo/l4.png" alt="Logo 4" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track 5: Lethe -->
+        <section class="track-block gold-theme text-left">
+            <div class="blur-bg" style="background-image: url('img/5.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">05</span>
+                    <h2>Lethe</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">I dipped my hands into the river of forgetting, hoping to wash away your name. But the water only turned to glass, trapping the reflection forever.</p>
+                    <div class="audio-player">
+                        <audio src="music/Lethe.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/5.png" alt="Lethe" class="cover-art">
+                        <img src="logo/l5.png" alt="Logo 5" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track 6: Lunar -->
+        <section class="track-block gold-theme text-right">
+            <div class="blur-bg" style="background-image: url('img/6.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">06</span>
+                    <h2>Lunar</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">I traded my warmth for the gravity of the moon. The silver runs through my veins now, sharp and unforgiving. Yet, in this freezing light, I have never danced so gracefully.</p>
+                    <div class="audio-player">
+                        <audio src="music/Lunar.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/6.png" alt="Lunar" class="cover-art">
+                        <img src="logo/l6.png" alt="Logo 6" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track 7: Noche Lips -->
+        <section class="track-block gold-theme text-left">
+            <div class="blur-bg" style="background-image: url('img/7.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">07</span>
+                    <h2>Noche Lips</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">Whispers painted with the dark hues of midnight. The words you never said hang heavily on the cold air between us, tasting like fading stars.</p>
+                    <div class="audio-player">
+                        <audio src="music/Noche Lips.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/7.png" alt="Noche Lips" class="cover-art">
+                        <img src="logo/l7.png" alt="Logo 7" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track 8: Shadow -->
+        <section class="track-block gold-theme text-right">
+            <div class="blur-bg" style="background-image: url('img/8.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">08</span>
+                    <h2>Shadow</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">We exist only for a moment, cast by a dying light. When the sun finally retreats, I will blend back into the nothingness from whence I came.</p>
+                    <div class="audio-player">
+                        <audio src="music/Shadow.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/8.png" alt="Shadow" class="cover-art">
+                        <img src="logo/l8.png" alt="Logo 8" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= THE TRANSITION BLOCK ================= -->
+        <div class="transition-divider">
+            <div class="transition-line-top"></div>
+            <div class="transition-content">
+                <span class="transition-title">The Inverse Alchemy</span>
+                <p class="transition-subtitle">The gold fades, giving way to the cold silver of the moon. Dawn dissolves into dusk.</p>
+            </div>
+            <div class="transition-line-bottom"></div>
+        </div>
+
+
+        <!-- ================= SILVER / GRAYISH THEME (9-11) ================= -->
+
+        <!-- Track 9: Devotion (Late Night Rendition) -->
+        <section class="track-block silver-theme text-left">
+            <div class="blur-bg" style="background-image: url('img/9.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">09</span>
+                    <h2>Devotion (Late Night Rendition)<br><span style="font-size: 1.2rem; font-style: italic; opacity: 0.7;">(Late Night Rendition)</span></h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">The temple has completely crumbled, and the storm has passed. Only the cold night breeze hums the remaining hymns of our ruined dedication.</p>
+                    <div class="audio-player">
+                        <audio src="music/Devotion (Late Night Rendition).mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/9.png" alt="Devotion Late Night" class="cover-art">
+                        <img src="logo/l9.png" alt="Logo 9" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track 10: The Sunset -->
+        <section class="track-block silver-theme text-right">
+            <div class="blur-bg" style="background-image: url('img/10.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">10</span>
+                    <h2>The Sunset</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">The sky bleeds into liquid gold, and finally, the shadows retreat. I lay my heavy silver crown upon the horizon. Here, at the end of all things, there is no more fighting.</p>
+                    <div class="audio-player">
+                        <audio src="music/The Sunset.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/10.png" alt="The Sunset" class="cover-art">
+                        <img src="logo/l10.png" alt="Logo 10" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track 11: Nivoria -->
+        <section class="track-block silver-theme text-left">
+            <div class="blur-bg" style="background-image: url('img/11.png');"></div>
+            <div class="container">
+                <div class="track-text">
+                    <span class="track-meta">11</span>
+                    <h2>Nivoria</h2>
+                    <div class="accent-line"></div>
+                    <p class="lyrics">A frozen wasteland where footprints vanish before they are made. The snow covers our history, leaving nothing but an endless, blinding silver.</p>
+                    <div class="audio-player">
+                        <audio src="music/Nivoria.mp3" preload="metadata"></audio>
+                        <button class="play-btn" aria-label="Play"></button>
+                        <div class="progress-container"><div class="progress-bar"></div></div>
+                        <div class="time-display"><span class="current-time">0:00</span><span class="duration">--:--</span></div>
+                    </div>
+                </div>
+                <div class="track-visual">
+                    <div class="cover-wrapper">
+                        <img src="img/11.png" alt="Nivoria" class="cover-art">
+                        <img src="logo/l11.png" alt="Logo 11" class="cover-logo overlay">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="album-footer">
+        <p>Sometimes I want to say...</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
