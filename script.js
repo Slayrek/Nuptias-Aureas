@@ -38,10 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentlyPlayingBtn.classList.remove('playing');
                 }
                 
-                audio.play();
-                playBtn.classList.add('playing');
-                currentlyPlayingAudio = audio;
-                currentlyPlayingBtn = playBtn;
+                audio.play().then(() => {
+                    playBtn.classList.add('playing');
+                    currentlyPlayingAudio = audio;
+                    currentlyPlayingBtn = playBtn;
+                }).catch(error => {
+                    console.error("Помилка відтворення:", error);
+                    alert("Не вдалося завантажити трек. Перевірте публічність репозиторію або правильність посилання.");
+                    playBtn.classList.remove('playing');
+                });
             } else {
                 audio.pause();
                 playBtn.classList.remove('playing');
